@@ -49,6 +49,7 @@
     <Compile Include="Entities\Problem.cs" />
     <Compile Include="Extensions\ExpressionExtension.cs" />
     <Compile Include="Extensions\ParameterRebinder .cs" />
+    <Compile Include="GenericRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Migrations\201407131148062_CreateOnlineJudgeSchema.cs" />
