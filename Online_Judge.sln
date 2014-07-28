@@ -13,6 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Infrastructure", "4. Inf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online_Judge.DAL", "Online_Judge.DAL\Online_Judge.DAL.csproj", "{A1D6E855-E5D3-495F-A355-CC092F386C80}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online_Judge.DAL.Tests", "Online_Judge.DAL.Tests\Online_Judge.DAL.Tests.csproj", "{FFD86CB4-54D6-4485-8A9C-BF3D79A5FAAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6ED44F73-4609-495A-B32B-08421E3E3268}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +34,10 @@ Global
 		{A1D6E855-E5D3-495F-A355-CC092F386C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1D6E855-E5D3-495F-A355-CC092F386C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1D6E855-E5D3-495F-A355-CC092F386C80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFD86CB4-54D6-4485-8A9C-BF3D79A5FAAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFD86CB4-54D6-4485-8A9C-BF3D79A5FAAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFD86CB4-54D6-4485-8A9C-BF3D79A5FAAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFD86CB4-54D6-4485-8A9C-BF3D79A5FAAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -34,5 +45,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{D9F775B6-AE05-495A-9822-E8086686677C} = {888F0CC2-9E18-409F-9E28-FC8DA6BB7453}
 		{A1D6E855-E5D3-495F-A355-CC092F386C80} = {090769D9-78CA-4157-B4B1-DE6245034FC1}
+		{FFD86CB4-54D6-4485-8A9C-BF3D79A5FAAE} = {090769D9-78CA-4157-B4B1-DE6245034FC1}
 	EndGlobalSection
 EndGlobal
