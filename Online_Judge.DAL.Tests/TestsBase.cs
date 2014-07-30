@@ -18,9 +18,12 @@ namespace Online_Judge.DAL.Tests
 		public void StartTest()
 		{
 			CreateContext();
+			CleanupDatabase();
 
 			BuilderSetup.SetCreatePersistenceMethod<Problem>(AddEntity);
 			BuilderSetup.SetCreatePersistenceMethod<IList<Problem>>(AddList);
+			BuilderSetup.SetCreatePersistenceMethod<User>(AddEntity);
+			BuilderSetup.SetCreatePersistenceMethod<IList<User>>(AddList);
 		}
 
 		protected void CreateContext()
@@ -39,6 +42,12 @@ namespace Online_Judge.DAL.Tests
 				Context.Dispose();
 				ContextDisposed = true;
 			}
+		}
+
+		protected void CleanupDatabase()
+		{
+			Context.Database.ExecuteSqlCommand(@"Delete from Problems");
+			Context.Database.ExecuteSqlCommand(@"Delete from Users");
 		}
 
 		private void AddEntity<TEntity>(TEntity entity) where TEntity : class

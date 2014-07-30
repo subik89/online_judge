@@ -6,11 +6,13 @@ namespace Online_Judge.DAL
 	/// <summary>
 	/// OnlineJudgeDBContext class
 	/// </summary>
-	public class OnlineJudgeDBContext : BaseDomainContext
+	public class OnlineJudgeDBContext : DbContext
 	{
-		public OnlineJudgeDBContext() 
-			: base("OnlineJudgeConnection")
+		public OnlineJudgeDBContext()
 		{
+			var ensureDLLIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
+
+			Database.SetInitializer(new MigrateDatabaseToLatestVersion<OnlineJudgeDBContext, Migrations.Configuration>());
 		}
 
 		public DbSet<User> Users { get; set; }

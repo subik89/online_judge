@@ -25,7 +25,7 @@ namespace Online_Judge.DAL
 		/// <typeparam name="TEntity">The type of the entity.</typeparam>
 		/// <param name="specification">The specification.</param>
 		/// <returns></returns>
-		IQueryable<TEntity> GetQuery<TEntity>(ISpecification<TEntity> specification) where TEntity : class;
+		IQueryable<TEntity> GetQuery<TEntity>(Specification<TEntity> specification) where TEntity : class;
 
 		/// <summary>
 		/// Gets single entity using specification
@@ -33,7 +33,7 @@ namespace Online_Judge.DAL
 		/// <typeparam name="TEntity">The type of the entity.</typeparam>
 		/// <param name="specification">The specification.</param>
 		/// <returns></returns>
-		TEntity Single<TEntity>(ISpecification<TEntity> specification) where TEntity : class;
+		TEntity Single<TEntity>(Specification<TEntity> specification) where TEntity : class;
 
 		/// <summary>
 		/// Singles the or default.
@@ -41,7 +41,7 @@ namespace Online_Judge.DAL
 		/// <typeparam name="TEntity">The type of the entity.</typeparam>
 		/// <param name="specification">The specification.</param>
 		/// <returns></returns>
-		TEntity SingleOrDefault<TEntity>(ISpecification<TEntity> specification) where TEntity : class;
+		TEntity SingleOrDefault<TEntity>(Specification<TEntity> specification) where TEntity : class;
 
 		/// <summary>
 		/// Gets first entity with specification.
@@ -49,7 +49,7 @@ namespace Online_Judge.DAL
 		/// <typeparam name="TEntity">The type of the entity.</typeparam>
 		/// <param name="specification">The specification.</param>
 		/// <returns></returns>
-		TEntity First<TEntity>(ISpecification<TEntity> specification) where TEntity : class;
+		TEntity First<TEntity>(Specification<TEntity> specification) where TEntity : class;
 
 		/// <summary>
 		/// Firsts the or default.
@@ -57,7 +57,7 @@ namespace Online_Judge.DAL
 		/// <typeparam name="TEntity">The type of the entity.</typeparam>
 		/// <param name="specification">The specification.</param>
 		/// <returns></returns>
-		TEntity FirstOrDefault<TEntity>(ISpecification<TEntity> specification) where TEntity : class;
+		TEntity FirstOrDefault<TEntity>(Specification<TEntity> specification) where TEntity : class;
 
 		/// <summary>
 		/// Adds the specified entity.
@@ -71,7 +71,7 @@ namespace Online_Judge.DAL
 		/// </summary>
 		/// <typeparam name="TEntity">The type of the entity.</typeparam>
 		/// <param name="entities">The entities.</param>
-		void Add<TEntity>(IEnumerable<TEntity> entities) where TEntity : class;
+		void Add<TEntity>(List<TEntity> entities) where TEntity : class;
 
 		/// <summary>
 		/// Deletes the specified entity.
@@ -92,7 +92,7 @@ namespace Online_Judge.DAL
 		/// </summary>
 		/// <typeparam name="TEntity">The type of the entity.</typeparam>
 		/// <param name="specification">The specification.</param>
-		void Delete<TEntity>(ISpecification<TEntity> specification) where TEntity : class;
+		void Delete<TEntity>(Specification<TEntity> specification) where TEntity : class;
 
 		/// <summary>
 		/// Finds entities based on provided criteria.
@@ -100,7 +100,7 @@ namespace Online_Judge.DAL
 		/// <typeparam name="TEntity">The type of the entity.</typeparam>
 		/// <param name="specification">The specification.</param>
 		/// <returns></returns>
-		IEnumerable<TEntity> Find<TEntity>(ISpecification<TEntity> specification) where TEntity : class;
+		IEnumerable<TEntity> Find<TEntity>(Specification<TEntity> specification) where TEntity : class;
 
 		/// <summary>
 		/// Gets all.
@@ -120,7 +120,7 @@ namespace Online_Judge.DAL
 		/// <param name="pageSize">Size of the page.</param>
 		/// <param name="sortOrder">The sort order.</param>
 		/// <returns></returns>
-		IEnumerable<TEntity> Get<TEntity, TOrderBy>(ISpecification<TEntity> specification, Expression<Func<TEntity, TOrderBy>> orderBy, int pageIndex, int pageSize, SortOrder sortOrder = SortOrder.Ascending) where TEntity : class;
+		IEnumerable<TEntity> Get<TEntity, TOrderBy>(Specification<TEntity> specification, Expression<Func<TEntity, TOrderBy>> orderBy, int pageIndex, int pageSize, SortOrder sortOrder = SortOrder.Ascending) where TEntity : class;
 
 		/// <summary>
 		/// Counts the specified entities.
@@ -135,7 +135,7 @@ namespace Online_Judge.DAL
 		/// <typeparam name="TEntity">The type of the entity.</typeparam>
 		/// <param name="specification">The specification.</param>
 		/// <returns></returns>
-		int Count<TEntity>(ISpecification<TEntity> specification) where TEntity : class;
+		int Count<TEntity>(Specification<TEntity> specification) where TEntity : class;
 
 		/// <summary>
 		/// Gets the unit of work.

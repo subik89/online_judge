@@ -59,12 +59,12 @@ namespace Online_Judge.DAL
 			return ((IObjectContextAdapter) _context).ObjectContext.CreateQuery<TEntity>(entityName);
 		}
 
-		public IQueryable<TEntity> GetQuery<TEntity>(ISpecification<TEntity> specification) where TEntity : class
+		public IQueryable<TEntity> GetQuery<TEntity>(Specification<TEntity> specification) where TEntity : class
 		{
 			return specification.SatisfyingEntitiesFrom(GetQuery<TEntity>());
 		}
 
-		public IEnumerable<TEntity> Get<TEntity, TOrderBy>(ISpecification<TEntity> specification,
+		public IEnumerable<TEntity> Get<TEntity, TOrderBy>(Specification<TEntity> specification,
 		                                                   Expression<Func<TEntity, TOrderBy>> orderBy, int pageIndex,
 		                                                   int pageSize,
 		                                                   SortOrder sortOrder = SortOrder.Ascending) where TEntity : class
@@ -90,27 +90,27 @@ namespace Online_Judge.DAL
 			return GetQuery<TEntity>().AsEnumerable();
 		}
 
-		public TEntity Single<TEntity>(ISpecification<TEntity> specification) where TEntity : class
+		public TEntity Single<TEntity>(Specification<TEntity> specification) where TEntity : class
 		{
 			return specification.SatisfyingEntitiesFrom(GetQuery<TEntity>()).Single();
 		}
 
-		public TEntity SingleOrDefault<TEntity>(ISpecification<TEntity> specification) where TEntity : class
+		public TEntity SingleOrDefault<TEntity>(Specification<TEntity> specification) where TEntity : class
 		{
 			return specification.SatisfyingEntitiesFrom(GetQuery<TEntity>()).SingleOrDefault();
 		}
 
-		public TEntity First<TEntity>(ISpecification<TEntity> specification) where TEntity : class
+		public TEntity First<TEntity>(Specification<TEntity> specification) where TEntity : class
 		{
 			return specification.SatisfyingEntitiesFrom(GetQuery<TEntity>()).First();
 		}
 
-		public TEntity FirstOrDefault<TEntity>(ISpecification<TEntity> specification) where TEntity : class
+		public TEntity FirstOrDefault<TEntity>(Specification<TEntity> specification) where TEntity : class
 		{
 			return specification.SatisfyingEntitiesFrom(GetQuery<TEntity>()).FirstOrDefault();
 		}
 
-		public IEnumerable<TEntity> Find<TEntity>(ISpecification<TEntity> specification) where TEntity : class
+		public IEnumerable<TEntity> Find<TEntity>(Specification<TEntity> specification) where TEntity : class
 		{
 			return specification.SatisfyingEntitiesFrom(GetQuery<TEntity>()).AsEnumerable();
 		}
@@ -125,7 +125,7 @@ namespace Online_Judge.DAL
 			_context.Set<TEntity>().Add(entity);
 		}
 
-		public void Add<TEntity>(IEnumerable<TEntity> entities) where TEntity : class
+		public void Add<TEntity>(List<TEntity> entities) where TEntity : class
 		{
 			if (entities == null || !entities.Any())
 			{
@@ -155,7 +155,7 @@ namespace Online_Judge.DAL
 			_context.Set<TEntity>().RemoveRange(entities);
 		}
 
-		public void Delete<TEntity>(ISpecification<TEntity> specification) where TEntity : class
+		public void Delete<TEntity>(Specification<TEntity> specification) where TEntity : class
 		{
 			IEnumerable<TEntity> records = Find(specification);
 			_context.Set<TEntity>().RemoveRange(records);
@@ -166,7 +166,7 @@ namespace Online_Judge.DAL
 			return GetQuery<TEntity>().Count();
 		}
 
-		public int Count<TEntity>(ISpecification<TEntity> specification) where TEntity : class
+		public int Count<TEntity>(Specification<TEntity> specification) where TEntity : class
 		{
 			return specification.SatisfyingEntitiesFrom(GetQuery<TEntity>()).Count();
 		}
