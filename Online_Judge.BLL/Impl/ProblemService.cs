@@ -1,5 +1,8 @@
-﻿using Online_Judge.DAL;
+﻿using System.Collections.Generic;
+using Online_Judge.DAL;
 using Online_Judge.DAL.Entities;
+using System.Linq;
+using Online_Judge.DAL.Specification;
 
 namespace Online_Judge.BLL.Impl
 {
@@ -29,9 +32,24 @@ namespace Online_Judge.BLL.Impl
 
 		#region IProblemService Members
 
+		public Problem GetProblem(int id)
+		{
+			return _problemRepository.SingleOrDefault(new Specification<Problem>(x => x.ProblemID == id));
+		}
+
+		public IEnumerable<Problem> GetAll()
+		{
+			return _problemRepository.GetAll<Problem>().ToList();
+		}
+
 		public void AddProblem(Problem problem)
 		{
 			_problemRepository.Add(problem);
+		}
+
+		public void Delete(int problemId)
+		{
+			_problemRepository.Delete(new Specification<Problem>(x => x.ProblemID == problemId));
 		}
 
 		#endregion

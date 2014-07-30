@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
+using Online_Judge.DAL.Entities;
 using WebMatrix.WebData;
 using Online_Judge.Web.Filters;
 using Online_Judge.Web.Models;
