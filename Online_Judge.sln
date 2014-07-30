@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Presentation", "1. Presentation", "{888F0CC2-9E18-409F-9E28-FC8DA6BB7453}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online_Judge.Web", "Online_Judge.Web\Online_Judge.Web.csproj", "{D9F775B6-AE05-495A-9822-E8086686677C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Domain", "2. Domain", "{854E28D6-6ACE-470C-A4CA-47147ABF027C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Data Access", "3. Data Access", "{090769D9-78CA-4157-B4B1-DE6245034FC1}"
@@ -22,16 +20,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6ED44F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online_Judge.BLL", "Online_Judge.BLL\Online_Judge.BLL.csproj", "{5CF4A76E-7BDB-4FCF-AB95-D6EF92BE181F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online_Judge.Web", "Online_Judge.Web\Online_Judge.Web.csproj", "{C2CE5601-C3E7-4AE2-8283-4D2BBF4C8BAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D9F775B6-AE05-495A-9822-E8086686677C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D9F775B6-AE05-495A-9822-E8086686677C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D9F775B6-AE05-495A-9822-E8086686677C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D9F775B6-AE05-495A-9822-E8086686677C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A1D6E855-E5D3-495F-A355-CC092F386C80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A1D6E855-E5D3-495F-A355-CC092F386C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1D6E855-E5D3-495F-A355-CC092F386C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -44,12 +40,16 @@ Global
 		{5CF4A76E-7BDB-4FCF-AB95-D6EF92BE181F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CF4A76E-7BDB-4FCF-AB95-D6EF92BE181F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CF4A76E-7BDB-4FCF-AB95-D6EF92BE181F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2CE5601-C3E7-4AE2-8283-4D2BBF4C8BAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2CE5601-C3E7-4AE2-8283-4D2BBF4C8BAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2CE5601-C3E7-4AE2-8283-4D2BBF4C8BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2CE5601-C3E7-4AE2-8283-4D2BBF4C8BAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{D9F775B6-AE05-495A-9822-E8086686677C} = {888F0CC2-9E18-409F-9E28-FC8DA6BB7453}
+		{C2CE5601-C3E7-4AE2-8283-4D2BBF4C8BAE} = {888F0CC2-9E18-409F-9E28-FC8DA6BB7453}
 		{5CF4A76E-7BDB-4FCF-AB95-D6EF92BE181F} = {854E28D6-6ACE-470C-A4CA-47147ABF027C}
 		{A1D6E855-E5D3-495F-A355-CC092F386C80} = {090769D9-78CA-4157-B4B1-DE6245034FC1}
 		{FFD86CB4-54D6-4485-8A9C-BF3D79A5FAAE} = {090769D9-78CA-4157-B4B1-DE6245034FC1}

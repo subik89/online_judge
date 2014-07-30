@@ -10,6 +10,12 @@ namespace Online_Judge.DAL.Entities
 	[Table("Problems")]
 	public class Problem
 	{
+		public Problem()
+		{
+			CreateTS = DateTime.Now;
+			UpdateTS = DateTime.Now;
+		}
+
 		public int ProblemID { get; set; }
 
 		[Required]

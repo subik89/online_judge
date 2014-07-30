@@ -15,5 +15,7 @@ namespace Online_Judge.BLL
 		void AddProblem(Problem problem);
 
 		void Delete(int problemId);
+
+		void Update(Problem problem);
 	}
 }

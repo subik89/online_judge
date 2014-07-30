@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Online_Judge.DAL;
 using Online_Judge.DAL.Entities;
 using System.Linq;
@@ -45,11 +46,32 @@ namespace Online_Judge.BLL.Impl
 		public void AddProblem(Problem problem)
 		{
 			_problemRepository.Add(problem);
+
+			_problemRepository.UnitOfWork.SaveChanges();
 		}
 
 		public void Delete(int problemId)
 		{
 			_problemRepository.Delete(new Specification<Problem>(x => x.ProblemID == problemId));
+
+			_problemRepository.UnitOfWork.SaveChanges();
+		}
+
+		public void Update(Problem problem)
+		{
+			var existingProblem = _problemRepository.SingleOrDefault(new Specification<Problem>(x => x.ProblemID == problem.ProblemID));
+
+			if (existingProblem == null)
+			{
+				throw new InvalidOperationException(string.Format("Problem of id {0} does not exist", problem.ProblemID));
+			}
+
+			existingProblem.Name = problem.Name;
+			existingProblem.Title = problem.Title;
+			existingProblem.Content = problem.Content;
+			existingProblem.UpdateTS = problem.UpdateTS;
+
+			_problemRepository.UnitOfWork.SaveChanges();
 		}
 
 		#endregion
