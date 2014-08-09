@@ -5,6 +5,13 @@
 	/// </summary>
 	public interface ICSharpCompiler
 	{
-		bool Compile(string sourceCode, string destinationPath);
+		/// <summary>
+		/// Compiles the specified source code.
+		/// </summary>
+		/// <param name="sourceCode">The source code.</param>
+		/// <param name="fileName">Name of the file.</param>
+		/// <param name="destinationPath">The destination path.</param>
+		/// <returns></returns>
+		bool Compile(string sourceCode, string fileName, string destinationPath);
 	}
 }

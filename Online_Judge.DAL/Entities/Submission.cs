@@ -28,6 +28,8 @@ namespace Online_Judge.DAL.Entities
 
 		public string Code { get; set; }
 
+		public bool IsChecked { get; set; }
+
 		public DateTime CreateTS { get; set; }
 
 		public DateTime UpdateTS { get; set; }

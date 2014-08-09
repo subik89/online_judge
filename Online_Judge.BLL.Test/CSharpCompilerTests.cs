@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OnlineJudge.Infrastructure.Impl;
 using Online_Judge.BLL.Compilers.Impl;
 
 namespace Online_Judge.BLL.Test
@@ -13,13 +14,13 @@ namespace Online_Judge.BLL.Test
 		public void CompileTest()
 		{
 			// Act
-			var result = new CSharpCompiler().Compile(@"using System;
+			var result = new CSharpCompiler(new FileSystemService()).Compile(@"using System;
             class Program {
               public static void Main(string[] args) {
 				Console.WriteLine(3);
 				Console.ReadKey();
               }
-            }", "compile.exe");
+            }", "compile.exe", "C:\temp");
 
 			// Assert
 			Assert.IsTrue(result);

@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BACE10BD-AD0F-4607-9BB0-943F55E44B1A}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{EB13E398-DDA2-451B-BD63-31576962F149}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Online_Judge.BLL.Test</RootNamespace>
-    <AssemblyName>Online_Judge.BLL.Test</AssemblyName>
+    <RootNamespace>CompileManagerService</RootNamespace>
+    <AssemblyName>CompileManagerService</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,18 +32,30 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CSharpCompilerTests.cs" />
+    <Compile Include="CompilerManagerService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CompilerManagerService.Designer.cs">
+      <DependentUpon>CompilerManagerService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OnlineJudge.Infrastructure\OnlineJudge.Infrastructure.csproj">
@@ -51,6 +65,10 @@
     <ProjectReference Include="..\Online_Judge.BLL\Online_Judge.BLL.csproj">
       <Project>{5CF4A76E-7BDB-4FCF-AB95-D6EF92BE181F}</Project>
       <Name>Online_Judge.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Online_Judge.DAL\Online_Judge.DAL.csproj">
+      <Project>{A1D6E855-E5D3-495F-A355-CC092F386C80}</Project>
+      <Name>Online_Judge.DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

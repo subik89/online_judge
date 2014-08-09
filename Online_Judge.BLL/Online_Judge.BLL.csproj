@@ -39,6 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompilerMangerService\ICompilerManagerService.cs" />
+    <Compile Include="CompilerMangerService\Impl\CompilerManagerService.cs" />
+    <Compile Include="CompilerMangerService\Impl\SubmissionValidator.cs" />
+    <Compile Include="CompilerMangerService\ISubmissionValidator.cs" />
     <Compile Include="Compilers\Impl\CSharpCompiler.cs" />
     <Compile Include="Compilers\ICSharpCompiler.cs" />
     <Compile Include="Impl\ProblemService.cs" />
@@ -50,6 +54,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OnlineJudge.Infrastructure\OnlineJudge.Infrastructure.csproj">
+      <Project>{4CD005E7-5066-4C0A-88C8-38CB1E044E74}</Project>
+      <Name>OnlineJudge.Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Online_Judge.DAL\Online_Judge.DAL.csproj">
       <Project>{A1D6E855-E5D3-495F-A355-CC092F386C80}</Project>
       <Name>Online_Judge.DAL</Name>

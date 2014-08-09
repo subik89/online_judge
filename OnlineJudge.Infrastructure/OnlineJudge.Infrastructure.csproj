@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BACE10BD-AD0F-4607-9BB0-943F55E44B1A}</ProjectGuid>
+    <ProjectGuid>{4CD005E7-5066-4C0A-88C8-38CB1E044E74}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Online_Judge.BLL.Test</RootNamespace>
-    <AssemblyName>Online_Judge.BLL.Test</AssemblyName>
+    <RootNamespace>OnlineJudge.Infrastructure</RootNamespace>
+    <AssemblyName>OnlineJudge.Infrastructure</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,7 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,18 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CSharpCompilerTests.cs" />
+    <Compile Include="IFileSystemService.cs" />
+    <Compile Include="Impl\FileSystemService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\OnlineJudge.Infrastructure\OnlineJudge.Infrastructure.csproj">
-      <Project>{4CD005E7-5066-4C0A-88C8-38CB1E044E74}</Project>
-      <Name>OnlineJudge.Infrastructure</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Online_Judge.BLL\Online_Judge.BLL.csproj">
-      <Project>{5CF4A76E-7BDB-4FCF-AB95-D6EF92BE181F}</Project>
-      <Name>Online_Judge.BLL</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

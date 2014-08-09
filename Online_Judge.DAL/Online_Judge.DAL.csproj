@@ -66,6 +66,10 @@
     <Compile Include="Migrations\201408090908248_CreateTestAndSubmissionTables.Designer.cs">
       <DependentUpon>201408090908248_CreateTestAndSubmissionTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201408091130513_Updated_SubmissionTable.cs" />
+    <Compile Include="Migrations\201408091130513_Updated_SubmissionTable.Designer.cs">
+      <DependentUpon>201408091130513_Updated_SubmissionTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OnlineJudgeDBContext.cs" />
     <Compile Include="Entities\User.cs" />
@@ -92,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201408090908248_CreateTestAndSubmissionTables.resx">
       <DependentUpon>201408090908248_CreateTestAndSubmissionTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408091130513_Updated_SubmissionTable.resx">
+      <DependentUpon>201408091130513_Updated_SubmissionTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
