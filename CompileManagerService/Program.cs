@@ -38,7 +38,6 @@ namespace CompileManagerService
 			}
 			else
 			{
-
 				ServiceBase.Run(servicesToRun);
 			}
 		}

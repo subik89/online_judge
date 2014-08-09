@@ -50,6 +50,11 @@ namespace Online_Judge.BLL.CompilerMangerService.Impl
 		{
 			var submissionToCheck = _genericRepository.Find(new Specification<Submission>(x => x.IsChecked == false)).ToList();
 
+			if (!submissionToCheck.Any())
+			{
+				return;
+			}
+
 			foreach (var submission in submissionToCheck)
 			{
 				if (submission.Language.Equals("C#"))
