@@ -8,7 +8,7 @@ namespace OnlineJudge.Infrastructure.Impl
 	public class FileSystemService : IFileSystemService
 	{
 		/// <summary>
-		/// 	Determines whether the given path refers to an existing directory on disk.
+		/// Determines whether the given path refers to an existing directory on disk.
 		/// </summary>
 		/// <param name="directoryPath"> The directory path. </param>
 		/// <returns> </returns>
@@ -18,7 +18,7 @@ namespace OnlineJudge.Infrastructure.Impl
 		}
 
 		/// <summary>
-		/// 	Creates all directories and subdirectories as specified by path.
+		/// Creates all directories and subdirectories as specified by path.
 		/// </summary>
 		/// <param name="directoryPath"> The directory path. </param>
 		/// <returns> </returns>
@@ -28,7 +28,7 @@ namespace OnlineJudge.Infrastructure.Impl
 		}
 
 		/// <summary>
-		/// 	Creates all directories and subdirectories as specified by path.
+		/// Creates all directories and subdirectories as specified by path.
 		/// </summary>
 		/// <param name="directoryPath"> The directory path. </param>
 		/// <returns> </returns>
@@ -62,7 +62,7 @@ namespace OnlineJudge.Infrastructure.Impl
 		}
 
 		/// <summary>
-		/// 	Writes content to the specified file.
+		/// Writes content to the specified file.
 		/// </summary>
 		/// <param name="filePath"> The file path. </param>
 		/// <param name="content"> The content. </param>
