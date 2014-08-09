@@ -16,7 +16,9 @@ namespace Online_Judge.DAL
 		}
 
 		public DbSet<User> Users { get; set; }
-		public DbSet<Problem> Problems { get; set; } 
+		public DbSet<Problem> Problems { get; set; }
+		public DbSet<Submission> Submissions { get; set; }
+		public DbSet<Test> Tests { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{

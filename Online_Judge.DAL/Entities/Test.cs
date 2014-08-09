@@ -9,6 +9,12 @@ namespace Online_Judge.DAL.Entities
 	[Table("Tests")]
 	public class Test
 	{
+		public Test()
+		{
+			CreateTS = DateTime.Now;
+			UpdateTS = DateTime.Now;
+		}
+
 		public int TestID { get; set; }
 
 		public int ProblemID { get; set; }
@@ -20,5 +26,7 @@ namespace Online_Judge.DAL.Entities
 		public DateTime CreateTS { get; set; }
 
 		public DateTime UpdateTS { get; set; }
+
+		public virtual Problem Problem { get; set; }
 	}
 }

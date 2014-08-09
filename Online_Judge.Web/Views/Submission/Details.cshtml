@@ -1,0 +1,74 @@
+﻿@model Online_Judge.DAL.Entities.Submission
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Submission</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Problem.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Problem.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Language)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Language)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateTS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateTS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdateTS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateTS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SubmissionID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

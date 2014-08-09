@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Online_Judge.DAL.Entities.Submission>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Moje zgłoszenia</h2>
+
+<p>
+    @Html.ActionLink("Dodaj nowe zgłoszenie", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Problem.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Language)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateTS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateTS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Problem.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Language)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateTS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdateTS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SubmissionID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SubmissionID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SubmissionID })
+        </td>
+    </tr>
+}
+
+</table>

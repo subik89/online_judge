@@ -69,7 +69,7 @@ namespace Online_Judge.BLL.Impl
 			existingProblem.Name = problem.Name;
 			existingProblem.Title = problem.Title;
 			existingProblem.Content = problem.Content;
-			existingProblem.UpdateTS = problem.UpdateTS;
+			existingProblem.UpdateTS = DateTime.Now;
 
 			_problemRepository.UnitOfWork.SaveChanges();
 		}

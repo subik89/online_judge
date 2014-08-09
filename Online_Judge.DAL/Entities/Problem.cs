@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -37,5 +38,7 @@ namespace Online_Judge.DAL.Entities
 
 		[Required]
 		public DateTime UpdateTS { get; set; }
+
+		public ICollection<Test> Tests { get; set; } 
 	}
 }

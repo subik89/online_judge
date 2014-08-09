@@ -11,6 +11,7 @@ namespace Online_Judge.DAL.Entities
 	{
 		public Submission()
 		{
+			Status = 0;
 			CreateTS = DateTime.Now;
 			UpdateTS = DateTime.Now;
 		}

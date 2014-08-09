@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Problem.cs" />
+    <Compile Include="Entities\Submission.cs" />
+    <Compile Include="Entities\Test.cs" />
     <Compile Include="Extensions\ExpressionExtension.cs" />
     <Compile Include="Extensions\ParameterRebinder .cs" />
     <Compile Include="GenericRepository.cs" />
@@ -59,6 +61,10 @@
     <Compile Include="Migrations\201407131228318_CreateProblemTableAndUpdateUserTableName.cs" />
     <Compile Include="Migrations\201407131228318_CreateProblemTableAndUpdateUserTableName.Designer.cs">
       <DependentUpon>201407131228318_CreateProblemTableAndUpdateUserTableName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201408090908248_CreateTestAndSubmissionTables.cs" />
+    <Compile Include="Migrations\201408090908248_CreateTestAndSubmissionTables.Designer.cs">
+      <DependentUpon>201408090908248_CreateTestAndSubmissionTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OnlineJudgeDBContext.cs" />
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201407131228318_CreateProblemTableAndUpdateUserTableName.resx">
       <DependentUpon>201407131228318_CreateProblemTableAndUpdateUserTableName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408090908248_CreateTestAndSubmissionTables.resx">
+      <DependentUpon>201408090908248_CreateTestAndSubmissionTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

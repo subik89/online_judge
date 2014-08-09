@@ -1,0 +1,58 @@
+﻿@model Online_Judge.DAL.Entities.Test
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Test</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Problem.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Problem.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeLimit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeLimit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateTS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateTS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdateTS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateTS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TestID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
