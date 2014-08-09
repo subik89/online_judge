@@ -44,6 +44,14 @@ namespace OnlineJudge.Infrastructure.Impl
 			return directoryInfo;
 		}
 
+		public void CreateFileIfNotExists(string filePath)
+		{
+			if (!File.Exists(filePath))
+			{
+				File.Create(filePath);
+			}
+		}
+
 		/// <summary>
 		/// Moves the file.
 		/// </summary>
@@ -59,6 +67,16 @@ namespace OnlineJudge.Infrastructure.Impl
 			}
 
 			File.Move(sourceFileName, destFileName);
+		}
+
+		/// <summary>
+		/// Reads specified file
+		/// </summary>
+		/// <param name="filePath"> The file path. </param>
+		/// <returns> </returns>
+		public string ReadFromFile(string filePath)
+		{
+			return File.ReadAllText(filePath);
 		}
 
 		/// <summary>

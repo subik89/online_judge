@@ -18,7 +18,7 @@ namespace CompileManagerService
 		public CompilerManagerService()
 		{
 			InitializeComponent();
-			_compilerManagerService = new Online_Judge.BLL.CompilerMangerService.Impl.CompilerManagerService(new GenericRepository(new OnlineJudgeDBContext()), new CSharpCompiler(new FileSystemService()), new SubmissionValidator());
+			_compilerManagerService = new Online_Judge.BLL.CompilerMangerService.Impl.CompilerManagerService(new GenericRepository(new OnlineJudgeDBContext()), new CSharpCompiler(new FileSystemService()), new SubmissionValidator(), new FileSystemService());
 		}
 
 		protected override void OnStart(string[] args)

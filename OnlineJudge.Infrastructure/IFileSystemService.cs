@@ -36,6 +36,13 @@ namespace OnlineJudge.Infrastructure
 		void MoveFile(string sourceFileName, string destFileName);
 
 		/// <summary>
+		/// Reads from file.
+		/// </summary>
+		/// <param name="filePath">The file path.</param>
+		/// <returns></returns>
+		string ReadFromFile(string filePath);
+
+		/// <summary>
 		/// Writes to file.
 		/// </summary>
 		/// <param name="filePath">The file path.</param>

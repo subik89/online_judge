@@ -18,7 +18,6 @@ namespace Online_Judge.BLL.Test
             class Program {
               public static void Main(string[] args) {
 				Console.WriteLine(3);
-				Console.ReadKey();
               }
             }", "compile.exe", "C:\temp");
 

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
+using OnlineJudge.Infrastructure;
 using Online_Judge.BLL.Compilers;
 using Online_Judge.DAL;
 using Online_Judge.DAL.Entities;
@@ -19,6 +21,7 @@ namespace Online_Judge.BLL.CompilerMangerService.Impl
 		private readonly IRepository _genericRepository;
 		private readonly ICSharpCompiler _csharpCompiler;
 		private readonly ISubmissionValidator _submissionValidator;
+		private readonly IFileSystemService _fileSystemService;
 
 		#endregion
 
@@ -30,11 +33,13 @@ namespace Online_Judge.BLL.CompilerMangerService.Impl
 		/// <param name="genericRepository">The generic repository.</param>
 		/// <param name="csharpCompiler">The csharp compiler.</param>
 		/// <param name="submissionValidator">The submission validator.</param>
-		public CompilerManagerService(IRepository genericRepository, ICSharpCompiler csharpCompiler, ISubmissionValidator submissionValidator)
+		/// <param name="fileSystemService">The file system service.</param>
+		public CompilerManagerService(IRepository genericRepository, ICSharpCompiler csharpCompiler, ISubmissionValidator submissionValidator, IFileSystemService fileSystemService)
 		{
 			_genericRepository = genericRepository;
 			_csharpCompiler = csharpCompiler;
 			_submissionValidator = submissionValidator;
+			_fileSystemService = fileSystemService;
 		}
 
 		#endregion
@@ -59,9 +64,11 @@ namespace Online_Judge.BLL.CompilerMangerService.Impl
 						continue;
 					}
 
-					var destinationResult = string.Format("{0}/{1}", destinationPath, "result.txt");
+					var destinationResultPath = string.Format("{0}/{1}", destinationPath, "result.txt");
 
-					RunProgram(string.Format("{0}/{1}", destinationPath, "compile.exe"), destinationResult);
+					RunProgram(string.Format("{0}/{1}", destinationPath, "compile.exe"), destinationResultPath);
+
+					var destinationResult = _fileSystemService.ReadFromFile(destinationResultPath);
 
 					if (_submissionValidator.Validate(destinationResult, "3"))
 					{
@@ -82,13 +89,11 @@ namespace Online_Judge.BLL.CompilerMangerService.Impl
 
 		public void RunProgram(string path, string resultFilePath)
 		{
-			string fileName = string.Format("{0}", path, resultFilePath);
-
 			var proc = new Process
 			{
 				StartInfo = new ProcessStartInfo
 				{
-					FileName = fileName,
+					FileName = path,
 					Arguments = "command line arguments to your executable",
 					UseShellExecute = false,
 					RedirectStandardOutput = true,
@@ -98,10 +103,14 @@ namespace Online_Judge.BLL.CompilerMangerService.Impl
 
 			proc.Start();
 
+			var stringBuilder = new StringBuilder();
 			while (!proc.StandardOutput.EndOfStream)
 			{
 				string line = proc.StandardOutput.ReadLine();
+				stringBuilder.Append(line);
 			}
+
+			_fileSystemService.WriteToFile(resultFilePath, stringBuilder.ToString());
 		}
 
 		#endregion
