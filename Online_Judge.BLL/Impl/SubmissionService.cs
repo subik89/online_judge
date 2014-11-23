@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Online_Judge.DAL;
 using Online_Judge.DAL.Entities;
 using Online_Judge.DAL.Specification;
+using Online_Judge.Core.Extensions;
 
 namespace Online_Judge.BLL.Impl
 {
@@ -60,7 +61,7 @@ namespace Online_Judge.BLL.Impl
 			existingSubmission.ProblemID = submission.ProblemID;
 			existingSubmission.Code = submission.Code;
 			existingSubmission.Language = submission.Language;
-			existingSubmission.Status = 0;
+			existingSubmission.Status = SubmissionStatus.Submitted.GetString();
 			existingSubmission.UpdateTS = DateTime.Now;
 
 			_submissionRepository.UnitOfWork.SaveChanges();

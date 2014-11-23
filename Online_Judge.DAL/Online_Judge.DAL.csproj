@@ -70,6 +70,18 @@
     <Compile Include="Migrations\201408091130513_Updated_SubmissionTable.Designer.cs">
       <DependentUpon>201408091130513_Updated_SubmissionTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201411231219312_Update_Submission_Status_Type.cs" />
+    <Compile Include="Migrations\201411231219312_Update_Submission_Status_Type.Designer.cs">
+      <DependentUpon>201411231219312_Update_Submission_Status_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201411231221441_Update_Submission_Status_And_Language_Length.cs" />
+    <Compile Include="Migrations\201411231221441_Update_Submission_Status_And_Language_Length.Designer.cs">
+      <DependentUpon>201411231221441_Update_Submission_Status_And_Language_Length.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201411231238023_Update_Submission_Status_To_Nullable.cs" />
+    <Compile Include="Migrations\201411231238023_Update_Submission_Status_To_Nullable.Designer.cs">
+      <DependentUpon>201411231238023_Update_Submission_Status_To_Nullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OnlineJudgeDBContext.cs" />
     <Compile Include="Entities\User.cs" />
@@ -80,6 +92,7 @@
     <Compile Include="Specification\ISpecification.cs" />
     <Compile Include="Specification\OrSpecification.cs" />
     <Compile Include="Specification\Specification.cs" />
+    <Compile Include="SubmissionStatus.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -100,6 +113,21 @@
     <EmbeddedResource Include="Migrations\201408091130513_Updated_SubmissionTable.resx">
       <DependentUpon>201408091130513_Updated_SubmissionTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411231219312_Update_Submission_Status_Type.resx">
+      <DependentUpon>201411231219312_Update_Submission_Status_Type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411231221441_Update_Submission_Status_And_Language_Length.resx">
+      <DependentUpon>201411231221441_Update_Submission_Status_And_Language_Length.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411231238023_Update_Submission_Status_To_Nullable.resx">
+      <DependentUpon>201411231238023_Update_Submission_Status_To_Nullable.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Online_Judge.Core\Online_Judge.Core.csproj">
+      <Project>{79001223-189E-4E81-B2EF-6DFF82EAF101}</Project>
+      <Name>Online_Judge.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

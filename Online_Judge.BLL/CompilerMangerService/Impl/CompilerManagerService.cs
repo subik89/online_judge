@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
-using System.IO;
 using System.Text;
 using OnlineJudge.Infrastructure;
 using Online_Judge.BLL.Compilers;
+using Online_Judge.Core.Extensions;
 using Online_Judge.DAL;
 using Online_Judge.DAL.Entities;
 using Online_Judge.DAL.Specification;
@@ -57,15 +57,18 @@ namespace Online_Judge.BLL.CompilerMangerService.Impl
 
 			foreach (var submission in submissionToCheck)
 			{
+				var destinationPath = string.Format("C:/temp/{0}", submission.SubmissionID.ToString());
+
 				if (submission.Language.Equals("C#"))
 				{
-					var destinationPath = string.Format("C:/temp/{0}", submission.SubmissionID.ToString());
 					var status = _csharpCompiler.Compile(submission.Code, "compile.exe", destinationPath);
 
 					if (!status)
 					{
+						submission.Status = SubmissionStatus.CompilationError.GetString();
 						submission.IsChecked = true;
 						submission.UpdateTS = DateTime.Now;
+
 						continue;
 					}
 
@@ -75,15 +78,10 @@ namespace Online_Judge.BLL.CompilerMangerService.Impl
 
 					var destinationResult = _fileSystemService.ReadFromFile(destinationResultPath);
 
-					if (_submissionValidator.Validate(destinationResult, "3"))
-					{
-						submission.Status = 1;
-					}
-					else
-					{
-						submission.Status = 2;
-					}
+					var test = _genericRepository.SingleOrDefault(new Specification<Test>(x => x.ProblemID == submission.ProblemID));
+					var testContent = _fileSystemService.ReadFromFile(string.Format("C:/Data/OnlineJudge/{0}.txt", test.Name));
 
+					submission.Status = _submissionValidator.Validate(destinationResult, testContent).GetString();
 					submission.IsChecked = true;
 					submission.UpdateTS = DateTime.Now;
 				}

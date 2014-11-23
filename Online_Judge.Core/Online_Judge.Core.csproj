@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5CF4A76E-7BDB-4FCF-AB95-D6EF92BE181F}</ProjectGuid>
+    <ProjectGuid>{79001223-189E-4E81-B2EF-6DFF82EAF101}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Online_Judge.BLL</RootNamespace>
-    <AssemblyName>Online_Judge.BLL</AssemblyName>
+    <RootNamespace>Online_Judge.Core</RootNamespace>
+    <AssemblyName>Online_Judge.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,35 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\StringValueAttribute.cs" />
-    <Compile Include="CompilerMangerService\ICompilerManagerService.cs" />
-    <Compile Include="CompilerMangerService\Impl\CompilerManagerService.cs" />
-    <Compile Include="CompilerMangerService\Impl\SubmissionValidator.cs" />
-    <Compile Include="CompilerMangerService\ISubmissionValidator.cs" />
-    <Compile Include="Compilers\Impl\CSharpCompiler.cs" />
-    <Compile Include="Compilers\ICSharpCompiler.cs" />
-    <Compile Include="Impl\ProblemService.cs" />
-    <Compile Include="Impl\SubmissionService.cs" />
-    <Compile Include="Impl\TestService.cs" />
-    <Compile Include="IProblemService.cs" />
-    <Compile Include="ISubmissionService.cs" />
-    <Compile Include="ITestService.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\OnlineJudge.Infrastructure\OnlineJudge.Infrastructure.csproj">
-      <Project>{4CD005E7-5066-4C0A-88C8-38CB1E044E74}</Project>
-      <Name>OnlineJudge.Infrastructure</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Online_Judge.Core\Online_Judge.Core.csproj">
-      <Project>{79001223-189E-4E81-B2EF-6DFF82EAF101}</Project>
-      <Name>Online_Judge.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Online_Judge.DAL\Online_Judge.DAL.csproj">
-      <Project>{A1D6E855-E5D3-495F-A355-CC092F386C80}</Project>
-      <Name>Online_Judge.DAL</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Online_Judge.Core.Extensions;
 
 namespace Online_Judge.DAL.Entities
 {
@@ -11,7 +13,6 @@ namespace Online_Judge.DAL.Entities
 	{
 		public Submission()
 		{
-			Status = 0;
 			CreateTS = DateTime.Now;
 			UpdateTS = DateTime.Now;
 		}
@@ -22,9 +23,11 @@ namespace Online_Judge.DAL.Entities
 
 		public int ProblemID { get; set; }
 
+		[StringLength(20)]
 		public string Language { get; set; }
 
-		public int Status { get; set; }
+		[StringLength(100)]
+		public string Status { get; set; }
 
 		public string Code { get; set; }
 
