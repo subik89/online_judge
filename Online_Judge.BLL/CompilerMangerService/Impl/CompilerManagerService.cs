@@ -57,11 +57,12 @@ namespace Online_Judge.BLL.CompilerMangerService.Impl
 
 			foreach (var submission in submissionToCheck)
 			{
-				var destinationPath = string.Format("C:/temp/{0}", submission.SubmissionID.ToString());
+				var destinationPath = string.Format("C:/Data/OnlineJudge/results/{0}", submission.SubmissionID.ToString());
 
 				if (submission.Language.Equals("C#"))
 				{
-					var status = _csharpCompiler.Compile(submission.Code, "compile.exe", destinationPath);
+					const string executionFilePath = @"C:\Data\OnlineJudge\compile.exe";
+					var status = _csharpCompiler.Compile(submission.Code, executionFilePath, destinationPath);
 
 					if (!status)
 					{
@@ -74,7 +75,7 @@ namespace Online_Judge.BLL.CompilerMangerService.Impl
 
 					var destinationResultPath = string.Format("{0}/{1}", destinationPath, "result.txt");
 
-					RunProgram(string.Format("{0}/{1}", destinationPath, "compile.exe"), destinationResultPath);
+					RunProgram(executionFilePath, destinationResultPath);
 
 					var destinationResult = _fileSystemService.ReadFromFile(destinationResultPath);
 

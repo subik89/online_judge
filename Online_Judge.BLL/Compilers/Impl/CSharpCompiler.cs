@@ -36,7 +36,7 @@ namespace Online_Judge.BLL.Compilers.Impl
 
 			CompilerResults results = codeProvider.CompileAssemblyFromSource(parameters, sourceCode);
 
-			_fileSystemService.MoveFile(results.CompiledAssembly.Location, Path.Combine(destinationPath, fileName));
+			//_fileSystemService.MoveFile(results.CompiledAssembly.Location, Path.Combine(destinationPath, fileName));
 
 			results.Errors.Cast<CompilerError>().ToList().ForEach(error => Console.WriteLine(error.ErrorText));
 

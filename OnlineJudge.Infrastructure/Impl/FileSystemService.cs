@@ -86,6 +86,8 @@ namespace OnlineJudge.Infrastructure.Impl
 		/// <param name="content"> The content. </param>
 		public void WriteToFile(string filePath, string content)
 		{
+			CreateDirectoryIfNotExists(Path.GetDirectoryName(filePath));
+
 			File.WriteAllText(filePath, content);
 		}
 	}

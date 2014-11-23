@@ -1,4 +1,6 @@
-﻿using System.ServiceProcess;
+﻿using System;
+using System.Diagnostics;
+using System.ServiceProcess;
 using System.Timers;
 using OnlineJudge.Infrastructure.Impl;
 using Online_Judge.BLL.CompilerMangerService;
@@ -12,7 +14,7 @@ namespace CompileManagerService
 	{
 		#region Dependencies
 
-		private readonly ICompilerManagerService _compilerManagerService;
+		private ICompilerManagerService _compilerManagerService;
 
 		#endregion
 
@@ -28,10 +30,6 @@ namespace CompileManagerService
 		public CompilerManagerService()
 		{
 			InitializeComponent();
-			_compilerManagerService =
-				new Online_Judge.BLL.CompilerMangerService.Impl.CompilerManagerService(
-					new GenericRepository(new OnlineJudgeDBContext()), new CSharpCompiler(new FileSystemService()),
-					new SubmissionValidator(), new FileSystemService());
 		}
 
 		#endregion
@@ -40,7 +38,7 @@ namespace CompileManagerService
 
 		protected override void OnStart(string[] args)
 		{
-			_timer = new Timer {Interval = 10000};
+			_timer = new Timer { Interval = 10000 };
 
 			_timer.Elapsed += OnTimerElapsed;
 			_timer.Start();
@@ -56,9 +54,23 @@ namespace CompileManagerService
 			{
 				_isWorking = true;
 
-				_compilerManagerService.CheckSubmissions();
+				try
+				{
+					//TODO: Moved to constructor and create context per call
+					_compilerManagerService = new Online_Judge.BLL.CompilerMangerService.Impl.CompilerManagerService(
+					new GenericRepository(new OnlineJudgeDBContext()), new CSharpCompiler(new FileSystemService()),
+					new SubmissionValidator(), new FileSystemService());
 
-				_isWorking = false;
+					_compilerManagerService.CheckSubmissions();
+				}
+				catch (Exception ex)
+				{
+					Trace.WriteLine(ex.Message);
+				}
+				finally
+				{
+					_isWorking = false;
+				}
 			}
 		}
 
