@@ -2,11 +2,10 @@
 using System.Diagnostics;
 using System.ServiceProcess;
 using System.Timers;
-using OnlineJudge.Infrastructure.Impl;
+using CompileManagerService.Bootstrappers;
+using CompileManagerService.Providers;
+using Microsoft.Practices.Unity;
 using Online_Judge.BLL.CompilerMangerService;
-using Online_Judge.BLL.CompilerMangerService.Impl;
-using Online_Judge.BLL.Compilers.Impl;
-using Online_Judge.DAL;
 
 namespace CompileManagerService
 {
@@ -14,7 +13,8 @@ namespace CompileManagerService
 	{
 		#region Dependencies
 
-		private ICompilerManagerService _compilerManagerService;
+		private IUnityContainer _parentContainer;
+		private readonly ICompilerManagerSettingsProvider _compilerManagerSettingsProvider;
 
 		#endregion
 
@@ -30,15 +30,35 @@ namespace CompileManagerService
 		public CompilerManagerService()
 		{
 			InitializeComponent();
+			InitializeServiceResources();
+
+			_compilerManagerSettingsProvider = _parentContainer.Resolve<ICompilerManagerSettingsProvider>();
 		}
 
 		#endregion
+
+		static void Main(string[] args)
+		{
+			var compilerManagerService = new CompilerManagerService();
+
+			if (Environment.UserInteractive)
+			{
+				compilerManagerService.OnStart(args);
+				Console.WriteLine("Press any key to stop program");
+				Console.Read();
+				compilerManagerService.OnStop();
+			}
+			else
+			{
+				Run(compilerManagerService);
+			}
+		}
 
 		#region Base Class Members
 
 		protected override void OnStart(string[] args)
 		{
-			_timer = new Timer { Interval = 10000 };
+			_timer = new Timer { Interval = _compilerManagerSettingsProvider.TimerInterval };
 
 			_timer.Elapsed += OnTimerElapsed;
 			_timer.Start();
@@ -56,12 +76,7 @@ namespace CompileManagerService
 
 				try
 				{
-					//TODO: Moved to constructor and create context per call
-					_compilerManagerService = new Online_Judge.BLL.CompilerMangerService.Impl.CompilerManagerService(
-					new GenericRepository(new OnlineJudgeDBContext()), new CSharpCompiler(new FileSystemService()),
-					new SubmissionValidator(), new FileSystemService());
-
-					_compilerManagerService.CheckSubmissions();
+					_parentContainer.Resolve<ICompilerManagerService>().CheckSubmissions();
 				}
 				catch (Exception ex)
 				{
@@ -72,6 +87,13 @@ namespace CompileManagerService
 					_isWorking = false;
 				}
 			}
+		}
+
+		private void InitializeServiceResources()
+		{
+			_parentContainer = new UnityContainer();
+
+			Bootstrapper.RegisterApplicationScopeDependencies(_parentContainer);
 		}
 
 		#endregion

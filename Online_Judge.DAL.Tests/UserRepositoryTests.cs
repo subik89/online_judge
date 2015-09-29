@@ -16,7 +16,7 @@ namespace Online_Judge.DAL.Tests
 		private IRepository UserRepository
 		{
 			get { return _userRepository ?? (_userRepository = new GenericRepository(Context)); }
-		}
+			}
 
 		[TestMethod]
 		public void GetAllTest()

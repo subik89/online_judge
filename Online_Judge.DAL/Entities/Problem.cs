@@ -17,6 +17,7 @@ namespace Online_Judge.DAL.Entities
 			UpdateTS = DateTime.Now;
 		}
 
+		[Key]
 		public int ProblemID { get; set; }
 
 		[Required]

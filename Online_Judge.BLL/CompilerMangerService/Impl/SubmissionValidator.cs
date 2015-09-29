@@ -2,9 +2,6 @@
 
 namespace Online_Judge.BLL.CompilerMangerService.Impl
 {
-	/// <summary>
-	/// SubmissionValidator class
-	/// </summary>
 	public class SubmissionValidator : ISubmissionValidator
 	{
 		public SubmissionStatus Validate(string actualOutputResult, string expectedOutputResult)

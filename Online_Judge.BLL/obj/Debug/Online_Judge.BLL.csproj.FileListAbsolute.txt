@@ -1,0 +1,13 @@
+E:\mgr\online_judge\Online_Judge.BLL\bin\Debug\Online_Judge.BLL.dll
+E:\mgr\online_judge\Online_Judge.BLL\bin\Debug\Online_Judge.BLL.pdb
+E:\mgr\online_judge\Online_Judge.BLL\bin\Debug\OnlineJudge.Infrastructure.dll
+E:\mgr\online_judge\Online_Judge.BLL\bin\Debug\Online_Judge.Core.dll
+E:\mgr\online_judge\Online_Judge.BLL\bin\Debug\Online_Judge.DAL.dll
+E:\mgr\online_judge\Online_Judge.BLL\bin\Debug\EntityFramework.dll
+E:\mgr\online_judge\Online_Judge.BLL\bin\Debug\OnlineJudge.Infrastructure.pdb
+E:\mgr\online_judge\Online_Judge.BLL\bin\Debug\Online_Judge.Core.pdb
+E:\mgr\online_judge\Online_Judge.BLL\bin\Debug\Online_Judge.DAL.pdb
+E:\mgr\online_judge\Online_Judge.BLL\bin\Debug\EntityFramework.xml
+E:\mgr\online_judge\Online_Judge.BLL\obj\Debug\Online_Judge.BLL.csprojResolveAssemblyReference.cache
+E:\mgr\online_judge\Online_Judge.BLL\obj\Debug\Online_Judge.BLL.dll
+E:\mgr\online_judge\Online_Judge.BLL\obj\Debug\Online_Judge.BLL.pdb

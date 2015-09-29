@@ -11,15 +11,15 @@ using System.Linq;
 
 namespace Online_Judge.BLL.CompilerMangerService.Impl
 {
-	/// <summary>
-	/// CompilerManagerService class
-	/// </summary>
 	public class CompilerManagerService : ICompilerManagerService
 	{
 		#region Dependencies
 
 		private readonly IRepository _genericRepository;
+
+		//TODO: Remove ICSharpCompiler from dependencies
 		private readonly ICSharpCompiler _csharpCompiler;
+
 		private readonly ISubmissionValidator _submissionValidator;
 		private readonly IFileSystemService _fileSystemService;
 
@@ -27,13 +27,6 @@ namespace Online_Judge.BLL.CompilerMangerService.Impl
 
 		#region Constructor
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="CompilerManagerService" /> class.
-		/// </summary>
-		/// <param name="genericRepository">The generic repository.</param>
-		/// <param name="csharpCompiler">The csharp compiler.</param>
-		/// <param name="submissionValidator">The submission validator.</param>
-		/// <param name="fileSystemService">The file system service.</param>
 		public CompilerManagerService(IRepository genericRepository, ICSharpCompiler csharpCompiler, ISubmissionValidator submissionValidator, IFileSystemService fileSystemService)
 		{
 			_genericRepository = genericRepository;

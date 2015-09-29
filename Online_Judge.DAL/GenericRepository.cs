@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Data.Entity.Core.Metadata.Edm;
 using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
+using Online_Judge.DAL.Impl;
 using Online_Judge.DAL.Specification;
 
 namespace Online_Judge.DAL
@@ -17,7 +17,7 @@ namespace Online_Judge.DAL
 	{
 		#region Dependencies
 
-		private readonly DbContext _context;
+		private readonly OnlineJudgeDBContext _context;
 
 		#endregion
 
@@ -34,7 +34,7 @@ namespace Online_Judge.DAL
 		/// </summary>
 		/// <param name="context">The context.</param>
 		/// <exception cref="System.ArgumentNullException">context</exception>
-		public GenericRepository(DbContext context)
+		public GenericRepository(OnlineJudgeDBContext context)
 		{
 			if (context == null)
 			{

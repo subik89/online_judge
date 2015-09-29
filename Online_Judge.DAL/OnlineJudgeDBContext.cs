@@ -8,27 +8,22 @@ namespace Online_Judge.DAL
 	/// </summary>
 	public class OnlineJudgeDBContext : DbContext
 	{
-		public OnlineJudgeDBContext()
-		{
-			var ensureDLLIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
-
-			Database.SetInitializer(new MigrateDatabaseToLatestVersion<OnlineJudgeDBContext, Migrations.Configuration>());
-		}
+		#region Properties
 
 		public DbSet<User> Users { get; set; }
 		public DbSet<Problem> Problems { get; set; }
 		public DbSet<Submission> Submissions { get; set; }
 		public DbSet<Test> Tests { get; set; }
 
-		protected override void OnModelCreating(DbModelBuilder modelBuilder)
-		{
-			//Make an ID property as PrimaryKey eg. UserID
-			modelBuilder
-				.Properties()
-				.Where(p => p.Name == p.DeclaringType.Name + "ID")
-				.Configure(p => p.IsKey());
+		#endregion
 
-			base.OnModelCreating(modelBuilder);
+		#region Constructor
+
+		public OnlineJudgeDBContext()
+		{
+			Database.SetInitializer(new MigrateDatabaseToLatestVersion<OnlineJudgeDBContext, Migrations.Configuration>());
 		}
+
+		#endregion
 	}
 }

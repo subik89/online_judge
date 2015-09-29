@@ -4,7 +4,7 @@ using System.Data.Common;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 
-namespace Online_Judge.DAL
+namespace Online_Judge.DAL.Impl
 {
 	internal class UnitOfWork : IUnitOfWork
 	{

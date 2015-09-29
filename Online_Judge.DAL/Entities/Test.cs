@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Online_Judge.DAL.Entities
@@ -15,6 +16,7 @@ namespace Online_Judge.DAL.Entities
 			UpdateTS = DateTime.Now;
 		}
 
+		[Key]
 		public int TestID { get; set; }
 
 		public int ProblemID { get; set; }
