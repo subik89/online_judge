@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Web.Mvc;
 using Online_Judge.BLL;
-using Online_Judge.BLL.Impl;
+using Online_Judge.BLL._Impl;
 using Online_Judge.DAL.Entities;
 using Online_Judge.DAL;
 

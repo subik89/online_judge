@@ -5,8 +5,8 @@ using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
-using Online_Judge.DAL.Impl;
 using Online_Judge.DAL.Specification;
+using Online_Judge.DAL._Impl;
 
 namespace Online_Judge.DAL
 {

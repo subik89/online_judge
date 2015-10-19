@@ -2,14 +2,13 @@
 using System.Diagnostics;
 using System.Text;
 using OnlineJudge.Infrastructure;
-using Online_Judge.BLL.Compilers;
 using Online_Judge.Core.Extensions;
 using Online_Judge.DAL;
 using Online_Judge.DAL.Entities;
 using Online_Judge.DAL.Specification;
 using System.Linq;
 
-namespace Online_Judge.BLL.CompilerMangerService.Impl
+namespace Online_Judge.BLL.CompilerMangerService._Impl
 {
 	public class CompilerManagerService : ICompilerManagerService
 	{
@@ -18,7 +17,7 @@ namespace Online_Judge.BLL.CompilerMangerService.Impl
 		private readonly IRepository _genericRepository;
 
 		//TODO: Remove ICSharpCompiler from dependencies
-		private readonly ICSharpCompiler _csharpCompiler;
+		private readonly ICodeCompiler _csharpCompiler;
 
 		private readonly ISubmissionValidator _submissionValidator;
 		private readonly IFileSystemService _fileSystemService;
@@ -27,7 +26,7 @@ namespace Online_Judge.BLL.CompilerMangerService.Impl
 
 		#region Constructor
 
-		public CompilerManagerService(IRepository genericRepository, ICSharpCompiler csharpCompiler, ISubmissionValidator submissionValidator, IFileSystemService fileSystemService)
+		public CompilerManagerService(IRepository genericRepository, ICodeCompiler csharpCompiler, ISubmissionValidator submissionValidator, IFileSystemService fileSystemService)
 		{
 			_genericRepository = genericRepository;
 			_csharpCompiler = csharpCompiler;

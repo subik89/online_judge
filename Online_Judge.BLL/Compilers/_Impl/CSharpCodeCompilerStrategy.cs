@@ -4,12 +4,12 @@ using System.IO;
 using System.Linq;
 using OnlineJudge.Infrastructure;
 
-namespace Online_Judge.BLL.Compilers.Impl
+namespace Online_Judge.BLL.Compilers._Impl
 {
 	/// <summary>
 	/// CSharpCompiler class
 	/// </summary>
-	public class CSharpCompiler : ICSharpCompiler
+	public class CSharpCodeCompilerStrategy : ICodeCompilerStrategy
 	{
 		#region Dependencies
 
@@ -19,7 +19,7 @@ namespace Online_Judge.BLL.Compilers.Impl
 
 		#region Constructor
 
-		public CSharpCompiler(IFileSystemService fileSystemService)
+		public CSharpCodeCompilerStrategy(IFileSystemService fileSystemService)
 		{
 			_fileSystemService = fileSystemService;
 		}
@@ -36,7 +36,7 @@ namespace Online_Judge.BLL.Compilers.Impl
 
 			CompilerResults results = codeProvider.CompileAssemblyFromSource(parameters, sourceCode);
 
-			//_fileSystemService.MoveFile(results.CompiledAssembly.Location, Path.Combine(destinationPath, fileName));
+			_fileSystemService.MoveFile(results.CompiledAssembly.Location, Path.Combine(destinationPath, fileName));
 
 			results.Errors.Cast<CompilerError>().ToList().ForEach(error => Console.WriteLine(error.ErrorText));
 

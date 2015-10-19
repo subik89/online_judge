@@ -5,7 +5,7 @@ using Online_Judge.DAL.Entities;
 using Online_Judge.DAL.Specification;
 using Online_Judge.Core.Extensions;
 
-namespace Online_Judge.BLL.Impl
+namespace Online_Judge.BLL._Impl
 {
 	/// <summary>
 	/// SubmissionService class

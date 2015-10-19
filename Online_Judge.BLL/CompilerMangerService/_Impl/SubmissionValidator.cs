@@ -1,6 +1,6 @@
 ﻿using Online_Judge.DAL;
 
-namespace Online_Judge.BLL.CompilerMangerService.Impl
+namespace Online_Judge.BLL.CompilerMangerService._Impl
 {
 	public class SubmissionValidator : ISubmissionValidator
 	{
