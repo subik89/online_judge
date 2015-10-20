@@ -2,7 +2,7 @@
 using CompileManagerService.Providers._Impl;
 using Microsoft.Practices.Unity;
 using OnlineJudge.Infrastructure;
-using OnlineJudge.Infrastructure.Impl;
+using OnlineJudge.Infrastructure._Impl;
 using Online_Judge.BLL.CompilerMangerService;
 using Online_Judge.BLL.CompilerMangerService._Impl;
 using Online_Judge.BLL.Compilers;
@@ -20,7 +20,7 @@ namespace CompileManagerService.Bootstrappers
 
 			container.RegisterType<ICompilerManagerService, Online_Judge.BLL.CompilerMangerService._Impl.CompilerManagerService>();
 			container.RegisterType<ICompilerManagerSettingsProvider, SettingsProvider>();
-			container.RegisterType<ICodeCompiler, CSharpCodeCompilerStrategy>();
+			container.RegisterType<ICodeCompilerStrategy, CSharpCodeCompilerStrategy>();
 			container.RegisterType<ISubmissionValidator, SubmissionValidator>();
 			container.RegisterType<IFileSystemService, FileSystemService>();
 		}

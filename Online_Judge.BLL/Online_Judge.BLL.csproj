@@ -41,18 +41,24 @@
   <ItemGroup>
     <Compile Include="Attributes\StringValueAttribute.cs" />
     <Compile Include="CompilerMangerService\ICompilerManagerService.cs" />
-    <Compile Include="CompilerMangerService\Impl\CompilerManagerService.cs" />
-    <Compile Include="CompilerMangerService\Impl\SubmissionValidator.cs" />
     <Compile Include="CompilerMangerService\ISubmissionValidator.cs" />
-    <Compile Include="Compilers\Impl\CSharpCompiler.cs" />
-    <Compile Include="Compilers\ICSharpCompiler.cs" />
-    <Compile Include="Impl\ProblemService.cs" />
-    <Compile Include="Impl\SubmissionService.cs" />
-    <Compile Include="Impl\TestService.cs" />
+    <Compile Include="CompilerMangerService\_Impl\CompilerManagerService.cs" />
+    <Compile Include="CompilerMangerService\_Impl\SubmissionValidator.cs" />
+    <Compile Include="Compilers\CodeCompilerStrategyFactory.cs" />
+    <Compile Include="Compilers\Commands\ICodeCompilerCommand.cs" />
+    <Compile Include="Compilers\Commands\_Impl\CodeCompilerCommand.cs" />
+    <Compile Include="Compilers\ICodeCompilerStrategy.cs" />
+    <Compile Include="Compilers\ICodeCompilerStrategyFactory.cs" />
+    <Compile Include="Compilers\_Impl\CPlusCodeCompilerStrategy.cs" />
+    <Compile Include="Compilers\_Impl\CSharpCodeCompilerStrategy.cs" />
+    <Compile Include="Compilers\_Impl\JavaCodeCompilerStrategy.cs" />
     <Compile Include="IProblemService.cs" />
     <Compile Include="ISubmissionService.cs" />
     <Compile Include="ITestService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_Impl\ProblemService.cs" />
+    <Compile Include="_Impl\SubmissionService.cs" />
+    <Compile Include="_Impl\TestService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OnlineJudge.Infrastructure\OnlineJudge.Infrastructure.csproj">

@@ -1,5 +1,0 @@
-E:\mgr\online_judge\OnlineJudge.Infrastructure\bin\Debug\OnlineJudge.Infrastructure.dll
-E:\mgr\online_judge\OnlineJudge.Infrastructure\bin\Debug\OnlineJudge.Infrastructure.pdb
-E:\mgr\online_judge\OnlineJudge.Infrastructure\obj\Debug\OnlineJudge.Infrastructure.dll
-E:\mgr\online_judge\OnlineJudge.Infrastructure\obj\Debug\OnlineJudge.Infrastructure.pdb
-E:\mgr\online_judge\OnlineJudge.Infrastructure\obj\Debug\OnlineJudge.Infrastructure.csprojResolveAssemblyReference.cache

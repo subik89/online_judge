@@ -51,6 +51,7 @@
     <Compile Include="Entities\Problem.cs" />
     <Compile Include="Entities\Submission.cs" />
     <Compile Include="Entities\Test.cs" />
+    <Compile Include="Enum\AvailableProgrammingLanguage.cs" />
     <Compile Include="Extensions\ExpressionExtension.cs" />
     <Compile Include="Extensions\ParameterRebinder .cs" />
     <Compile Include="GenericRepository.cs" />
@@ -88,13 +89,13 @@
     <Compile Include="OnlineJudgeDBContext.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Impl\UnitOfWork.cs" />
     <Compile Include="Specification\AndSpecification.cs" />
     <Compile Include="Specification\CompositeSpecification.cs" />
     <Compile Include="Specification\ISpecification.cs" />
     <Compile Include="Specification\OrSpecification.cs" />
     <Compile Include="Specification\Specification.cs" />
     <Compile Include="SubmissionStatus.cs" />
+    <Compile Include="_Impl\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

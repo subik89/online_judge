@@ -1,4 +1,0 @@
-E:\mgr\online_judge\Online_Judge.Core\bin\Debug\Online_Judge.Core.dll
-E:\mgr\online_judge\Online_Judge.Core\bin\Debug\Online_Judge.Core.pdb
-E:\mgr\online_judge\Online_Judge.Core\obj\Debug\Online_Judge.Core.dll
-E:\mgr\online_judge\Online_Judge.Core\obj\Debug\Online_Judge.Core.pdb

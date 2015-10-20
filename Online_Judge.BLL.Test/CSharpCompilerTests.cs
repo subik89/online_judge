@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OnlineJudge.Infrastructure.Impl;
+using OnlineJudge.Infrastructure._Impl;
 using Online_Judge.BLL.Compilers._Impl;
 
 namespace Online_Judge.BLL.Test
