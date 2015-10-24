@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Online_Judge.DAL")]
+[assembly: AssemblyTitle("OnlineJudge.Infrastructure")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Online_Judge.DAL")]
+[assembly: AssemblyProduct("OnlineJudge.Infrastructure")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("6efe3685-bdf0-463f-86ee-d5282757da68")]
+[assembly: Guid("1376375d-8bb3-4577-bc4a-ac40735aace8")]
 
 // Version information for an assembly consists of the following four values:
 //
