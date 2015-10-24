@@ -1,0 +1,100 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Presentation", "1. Presentation", "{888F0CC2-9E18-409F-9E28-FC8DA6BB7453}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Domain", "2. Domain", "{854E28D6-6ACE-470C-A4CA-47147ABF027C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Data Access", "3. Data Access", "{090769D9-78CA-4157-B4B1-DE6245034FC1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Infrastructure", "4. Infrastructure", "{113D086C-C091-4E54-A971-601F5EDBB7CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online_Judge.DAL", "Online_Judge.DAL\Online_Judge.DAL.csproj", "{A1D6E855-E5D3-495F-A355-CC092F386C80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online_Judge.DAL.Tests", "Online_Judge.DAL.Tests\Online_Judge.DAL.Tests.csproj", "{FFD86CB4-54D6-4485-8A9C-BF3D79A5FAAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6ED44F73-4609-495A-B32B-08421E3E3268}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online_Judge.BLL", "Online_Judge.BLL\Online_Judge.BLL.csproj", "{5CF4A76E-7BDB-4FCF-AB95-D6EF92BE181F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online_Judge.Web", "Online_Judge.Web\Online_Judge.Web.csproj", "{C2CE5601-C3E7-4AE2-8283-4D2BBF4C8BAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online_Judge.BLL.Tests", "Online_Judge.BLL.Test\Online_Judge.BLL.Tests.csproj", "{BACE10BD-AD0F-4607-9BB0-943F55E44B1A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. CompilerManagerService", "5. CompilerManagerService", "{7BDE387F-642D-4B01-AA0D-F05507FF20A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompileManagerService", "CompileManagerService\CompileManagerService.csproj", "{EB13E398-DDA2-451B-BD63-31576962F149}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineJudge.Infrastructure", "OnlineJudge.Infrastructure\OnlineJudge.Infrastructure.csproj", "{4CD005E7-5066-4C0A-88C8-38CB1E044E74}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Core", "0. Core", "{812957CD-8D6C-4117-87AA-A81F07C1FC03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online_Judge.Core", "Online_Judge.Core\Online_Judge.Core.csproj", "{79001223-189E-4E81-B2EF-6DFF82EAF101}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6. Scripts", "6. Scripts", "{D2523BD9-72A1-454B-83FC-A38AC64EF650}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "java", "java", "{60910AC8-3B0B-4FC8-99D8-486F9A208657}"
+	ProjectSection(SolutionItems) = preProject
+		..\Scripts\java_scripts\java_compile.bat = ..\Scripts\java_scripts\java_compile.bat
+		..\Scripts\java_scripts\run_java_program.bat = ..\Scripts\java_scripts\run_java_program.bat
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1D6E855-E5D3-495F-A355-CC092F386C80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1D6E855-E5D3-495F-A355-CC092F386C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1D6E855-E5D3-495F-A355-CC092F386C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1D6E855-E5D3-495F-A355-CC092F386C80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFD86CB4-54D6-4485-8A9C-BF3D79A5FAAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFD86CB4-54D6-4485-8A9C-BF3D79A5FAAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFD86CB4-54D6-4485-8A9C-BF3D79A5FAAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFD86CB4-54D6-4485-8A9C-BF3D79A5FAAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CF4A76E-7BDB-4FCF-AB95-D6EF92BE181F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CF4A76E-7BDB-4FCF-AB95-D6EF92BE181F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CF4A76E-7BDB-4FCF-AB95-D6EF92BE181F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CF4A76E-7BDB-4FCF-AB95-D6EF92BE181F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2CE5601-C3E7-4AE2-8283-4D2BBF4C8BAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2CE5601-C3E7-4AE2-8283-4D2BBF4C8BAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2CE5601-C3E7-4AE2-8283-4D2BBF4C8BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2CE5601-C3E7-4AE2-8283-4D2BBF4C8BAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BACE10BD-AD0F-4607-9BB0-943F55E44B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BACE10BD-AD0F-4607-9BB0-943F55E44B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BACE10BD-AD0F-4607-9BB0-943F55E44B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BACE10BD-AD0F-4607-9BB0-943F55E44B1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB13E398-DDA2-451B-BD63-31576962F149}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB13E398-DDA2-451B-BD63-31576962F149}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB13E398-DDA2-451B-BD63-31576962F149}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB13E398-DDA2-451B-BD63-31576962F149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CD005E7-5066-4C0A-88C8-38CB1E044E74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CD005E7-5066-4C0A-88C8-38CB1E044E74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CD005E7-5066-4C0A-88C8-38CB1E044E74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CD005E7-5066-4C0A-88C8-38CB1E044E74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79001223-189E-4E81-B2EF-6DFF82EAF101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79001223-189E-4E81-B2EF-6DFF82EAF101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79001223-189E-4E81-B2EF-6DFF82EAF101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79001223-189E-4E81-B2EF-6DFF82EAF101}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A1D6E855-E5D3-495F-A355-CC092F386C80} = {090769D9-78CA-4157-B4B1-DE6245034FC1}
+		{FFD86CB4-54D6-4485-8A9C-BF3D79A5FAAE} = {090769D9-78CA-4157-B4B1-DE6245034FC1}
+		{5CF4A76E-7BDB-4FCF-AB95-D6EF92BE181F} = {854E28D6-6ACE-470C-A4CA-47147ABF027C}
+		{C2CE5601-C3E7-4AE2-8283-4D2BBF4C8BAE} = {888F0CC2-9E18-409F-9E28-FC8DA6BB7453}
+		{BACE10BD-AD0F-4607-9BB0-943F55E44B1A} = {854E28D6-6ACE-470C-A4CA-47147ABF027C}
+		{EB13E398-DDA2-451B-BD63-31576962F149} = {7BDE387F-642D-4B01-AA0D-F05507FF20A7}
+		{4CD005E7-5066-4C0A-88C8-38CB1E044E74} = {113D086C-C091-4E54-A971-601F5EDBB7CA}
+		{79001223-189E-4E81-B2EF-6DFF82EAF101} = {812957CD-8D6C-4117-87AA-A81F07C1FC03}
+		{60910AC8-3B0B-4FC8-99D8-486F9A208657} = {D2523BD9-72A1-454B-83FC-A38AC64EF650}
+	EndGlobalSection
+EndGlobal
